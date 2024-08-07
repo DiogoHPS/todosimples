@@ -1,0 +1,11 @@
+// {
+//     "java.configuration.updateBuildConfiguration": "interactive",
+//     "java.compile.nullAnalysis.mode": "automatic"
+// }
+
+{
+    "terminal.integrated,defaultProfile.windowns": "Command Prompt",
+
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "disabled"
+}
