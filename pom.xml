@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.diogo</groupId>
-	<artifactId>todosimple</artifactId>
+	<artifactId>todosimples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>todosimple</name>
+	<name>todosimples</name>
 	<description>Spring Boot API for To Do App</description>
 	<properties>
 		<java.version>17</java.version>
