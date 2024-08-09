@@ -15,8 +15,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.scheduling.config.Task;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -51,9 +49,8 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy= "user")
-    private List<Task> tasks = new ArrayList<Task>();
+    private List<Task> tasks = new ArrayList<>();
 
-    
     public User() {
     }
 
@@ -94,7 +91,6 @@ public class User {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
-
 
     @Override
     public boolean equals(Object obj) {
