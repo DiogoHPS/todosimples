@@ -16,6 +16,135 @@ Seguindo um caminho diferente, em pouco tempo o Spring conquistou seu espaço na
 Fazendo uso apenas da JVM, o Spring traz para o programador recursos que antes só estavam disponíveis para soluções corporativas;
 2. Com Spring também passamos a <b>utilizar apenas aquilo que é necessário para o projeto.</b> Como mencionado agora há pouco, a plataforma J2EE e os EJBs nos levavam a implementar comportamentos que não eram necessários. Esse diferencial do Spring torna a arquitetura mais leve, fácil de compreender, manter e evoluir;
 3. Outro diferencial é que ele é <b>baseado na inversão de controle e injeção de dependência,</b> fornecendo para isso um container, que representa o núcleo do framework e que é responsável por criar e gerenciar os componentes da aplicação, os quais são comumente chamados de beans.
+
+# 🌶️ Lombok
+==========================================================================
+
+O Lombok é um framework para Java que permite escrever código eliminando a verbosidade, o que permite ganhar tempo de desenvolvimento para o que realmente é importante. Seu uso permite gerar em tempo de compilação os métodos getters e setters, métodos construtores, padrão builder e muito mais.
+
+Exemplo básico
+~~~java
+public class Pessoa{
+
+  private Long id;
+  private String nome;
+  private String email;
+  private String senha;
+
+  public Usuario(Long id, String nome, String email, String senha) {
+      this.id = id;
+      this.nome = nome;
+      this.email = email;
+      this.senha = senha;
+  }
+
+  public Pessoa() {
+  }
+
+  public Long getId() {
+      return id;
+  }
+
+  public void setId(Long id) {
+      this.id = id;
+  }
+
+  public String getNome() {
+      return nome;
+  }
+
+  public void setNome(String nome) {
+      this.nome = nome;
+  }
+
+  public String getEmail() {
+      return email;
+  }
+
+  public void setEmail(String email) {
+      this.email = email;
+  }
+
+  public String getSenha() {
+      return senha;
+  }
+
+  public void setSenha(String senha) {
+      this.senha = senha;
+  }
+
+  @Override
+  public String toString() {
+      return super.toString();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+      return super.equals(obj);
+  }
+}
+~~~
+
+<b>Esse é uma clássica básica e qualquer projeto, contudo se utilizarmos lombok teremos esse aspecto no código final:</b>
+
+~~~java
+import lombok.*;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+public class Pessoa{
+
+  private Long id;
+  private String nome;
+  private String email;
+  private String senha;
+
+}
+~~~
+<b>Temos a mesma funcionalidade.</b>
+
+### Processo de instalação no Eclipse
+
+Instalar o plugin do Lombok no Eclipse é simples. Para isso primeiro precisa baixar o .jar do lombok no site ou no repositório maven. Para este caso vou baixar do repositório maven disponível no link:
+
+https://mvnrepository.com/artifact/org.projectlombok/lombok
+
+Agora com o .jar do lombok baixado, dê um duplo clique para abrir e seguir a instalação.
+
+Próximo passo é inserir o Lombok no projeto Java, no caso do Maven:
+
+~~~java
+<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.4</version>
+  <scope>provided</scope>
+</dependency>
+~~~
+
+Clique sobre Run/Maven/ Install / Update e pronto. Reinicie o Eclipse e já vai poder usar o lombok em seus projetos
+
+Outros exemplos de uso do Lombok
+
+`Lombok @EqualsAndHashCode : Outro caso de uso é para gerar os métodos equals e hashCode apenas anotando com @EqualsAndHashCode.`
+
+`Lombok @ToString: Mais um caso de uso útil para gerar o método toString, apenas anotando a classe com @ToString.`
+
+`Lombok @Data: Se você quer que seu classe esteja completa, para simplificar, o Lombok fornece a anotação @Data. Esta anotação já fornece todos estes recursos`
+
+`Lombok @RequiredArgsConstructor: Para gerar o construtor com os parâmetros necessários.`
+
+`Lombok @NoArgsConstructor: Para gerar o construtor sem parâmetros.`
+
+`Lombok @AllArgsConstructor: Para gerar o construtor com todos os parâmetros.`
+
+# 🐋 Docker
+==========================================================================
+
+
 # 🗂️ MVC
 ==========================================================================
 ## 1. Introdução
